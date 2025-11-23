@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Car Showroom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b6cee",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-white/10">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-black dark:text-white text-3xl">menu</span>
+</div>
+<h1 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Explore</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-black dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-3xl">search</span>
+</button>
+</div>
+</header>
+<!-- Filters (Chips) -->
+<div class="px-4 py-3 bg-background-light dark:bg-background-dark">
+<div class="flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f0f0f0] dark:bg-[#232f48] px-4">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">Brand</p>
+<span class="material-symbols-outlined text-black dark:text-white text-base">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f0f0f0] dark:bg-[#232f48] px-4">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">Model</p>
+<span class="material-symbols-outlined text-black dark:text-white text-base">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f0f0f0] dark:bg-[#232f48] px-4">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">Budget</p>
+<span class="material-symbols-outlined text-black dark:text-white text-base">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f0f0f0] dark:bg-[#232f48] px-4">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">Fuel Type</p>
+<span class="material-symbols-outlined text-black dark:text-white text-base">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f0f0f0] dark:bg-[#232f48] px-4">
+<p class="text-black dark:text-white text-sm font-medium leading-normal">Year</p>
+<span class="material-symbols-outlined text-black dark:text-white text-base">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Sorting (Segmented Buttons) -->
+<div class="flex px-4 py-3 bg-background-light dark:bg-background-dark">
+<div class="flex h-10 flex-1 items-center justify-center rounded-xl bg-[#e9e9eb] dark:bg-[#232f48] p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-background-light dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-md has-[:checked]:text-black dark:has-[:checked]:text-white text-gray-500 dark:text-[#92a4c9] text-sm font-medium leading-normal transition-all duration-200">
+<span class="truncate">Latest</span>
+<input checked="" class="invisible w-0" name="sort-options" type="radio" value="Latest"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-background-light dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-md has-[:checked]:text-black dark:has-[:checked]:text-white text-gray-500 dark:text-[#92a4c9] text-sm font-medium leading-normal transition-all duration-200">
+<span class="truncate">Popular</span>
+<input class="invisible w-0" name="sort-options" type="radio" value="Popular"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-background-light dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-md has-[:checked]:text-black dark:has-[:checked]:text-white text-gray-500 dark:text-[#92a4c9] text-sm font-medium leading-normal transition-all duration-200">
+<span class="truncate">Price: Low → High</span>
+<input class="invisible w-0" name="sort-options" type="radio" value="Price: Low → High"/>
+</label>
+</div>
+</div>
+<!-- Car Grid -->
+<main class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 p-4">
+<!-- Car Card 1 -->
+<div class="flex flex-col gap-4 rounded-xl bg-[#ffffff] dark:bg-[#1a2232] p-4 shadow-lg transition-shadow hover:shadow-xl">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="White Audi R8 Spyder sports car against a gradient background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdcF2nzsf0gCcG0BMMUUB0Fu738xYpmNPJggVARZrhEUJWgdN0DKMBoF49aSBznrBM-9EfL3bY4VIl8DORj6qKwgEyf83QetMTRvLnnxdIvWFSY3f7cDTrtT7zv0Ad2CSJFHTWQqcLS1mKavWZlkk2bLqDnok_xjzyYcSb2hXzD86bUSMzcLHRHjiEX84nv0v8jED2XT1-pcYYI9jv6P5a7sejAzqInP3N33mdCAJAcSBzHREhRscnAQXwpBOrOa-XvomHbH4SnXSx");'></div>
+<div>
+<p class="text-black dark:text-white text-lg font-bold leading-normal">Audi R8 Spyder</p>
+<p class="text-gray-600 dark:text-[#92a4c9] text-base font-normal leading-normal">$155,000</p>
+<p class="text-green-500 text-sm font-medium leading-normal mt-1">In Stock</p>
+</div>
+<div class="flex flex-1 gap-3 flex-wrap justify-between items-end">
+<button class="flex flex-1 min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-[#232f48] text-black dark:text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-gray-300 dark:hover:bg-[#344466]">
+<span class="truncate">View Details</span>
+</button>
+<button class="flex flex-1 min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors hover:bg-blue-700">
+<span class="material-symbols-outlined">view_in_ar</span>
+<span class="truncate">View in AR</span>
+</button>
+</div>
+</div>
+<!-- Car Card 2 -->
+<div class="flex flex-col gap-4 rounded-xl bg-[#ffffff] dark:bg-[#1a2232] p-4 shadow-lg transition-shadow hover:shadow-xl">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Sleek silver Mercedes-AMG GT sports car" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBOuKG1c0dczri2Balz2sSAGNByxzprv9lE_9hkEKIHPqbpuxaeAH_jRTtVjmTTZqgKrkzzS7uqQ9zEmEXHWOA5q4CJW-fBNR427KhE8TUmvVn-fcLixNRN3yy8-oUbl7NJeVcq3qj_1RHlYK4GwtjA8If3YNUyGBgPeL3JNeJQXbvccQmijX2kqDS_gG9qdNBEg_gJwbgVjDhxfjTW0uOcat_ZDV5kEI4BnqR4H7rSHlVCl0lz0nkA_ERF9ldQOXX2OTONW1YJJ4T9");'></div>
+<div>
+<p class="text-black dark:text-white text-lg font-bold leading-normal">Mercedes-AMG GT</p>
+<p class="text-gray-600 dark:text-[#92a4c9] text-base font-normal leading-normal">$120,000</p>
+<p class="text-orange-400 text-sm font-medium leading-normal mt-1">Pre-Order</p>
+</div>
+<div class="flex flex-1 gap-3 flex-wrap justify-between items-end">
+<button class="flex flex-1 min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-[#232f48] text-black dark:text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-gray-300 dark:hover:bg-[#344466]">
+<span class="truncate">View Details</span>
+</button>
+<button class="flex flex-1 min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors hover:bg-blue-700">
+<span class="material-symbols-outlined">view_in_ar</span>
+<span class="truncate">View in AR</span>
+</button>
+</div>
+</div>
+<!-- Car Card 3 -->
+<div class="flex flex-col gap-4 rounded-xl bg-[#ffffff] dark:bg-[#1a2232] p-4 shadow-lg transition-shadow hover:shadow-xl">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Blue Porsche 911 Carrera on a city street" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhIE6BQ7uu3t7iBf_APn9Biuc-5q2Pjzvky-K7SXnuBf4gmv0KsiwJDLjczxY8KONQpW3mCjs2vT_p71LD7WxBjp7tpDUAPQsU2Ya2oInvLhVOu-2l6BeHlLWuCQLO53eYbRCa2GOsXP8oK-TrIkLLa6FUs3pF7ISnlCugr70MFJ1n-2_v6RIysJ5RmcOiv-oTHg-2wrRVExgaipTtxhh6H0NVhhgVYsx9A0oowmQCtuslfRNTFM48XuFWnNG7uU2okgNmWvZugLd_");'></div>
+<div>
+<p class="text-black dark:text-white text-lg font-bold leading-normal">Porsche 911 Carrera</p>
+<p class="text-gray-600 dark:text-[#92a4c9] text-base font-normal leading-normal">$114,400</p>
+<p class="text-green-500 text-sm font-medium leading-normal mt-1">In Stock</p>
+</div>
+<div class="flex flex-1 gap-3 flex-wrap justify-between items-end">
+<button class="flex flex-1 min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-[#232f48] text-black dark:text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-gray-300 dark:hover:bg-[#344466]">
+<span class="truncate">View Details</span>
+</button>
+<button class="flex flex-1 min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors hover:bg-blue-700">
+<span class="material-symbols-outlined">view_in_ar</span>
+<span class="truncate">View in AR</span>
+</button>
+</div>
+</div>
+<!-- Car Card 4 -->
+<div class="flex flex-col gap-4 rounded-xl bg-[#ffffff] dark:bg-[#1a2232] p-4 shadow-lg transition-shadow hover:shadow-xl">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Front view of a black BMW M4 Competition" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqGDKUFtRyFm4hX9x3_VEUzipTiuod8PfywnOJh0XpglQpkvBR9Y9Nf4wbHvMbZFwt5p-7tRxIeBlZq0rAQc9WkVGStOumUpkx1bOcN47kNKUUDXiXmQ6x8am5K2g7gWn_BkMoKwM38HaBIQkKuVhpumINlGemvXjVZms1RdKK21oi23Nd6ul2UcqpYczIbM0hMflxGNPb1n_b8iCzf_oM8g8E9klVyZSScqsj8SVURRcs6RvG-J2y8JM20XDi5UuG1QIH2RXAYJiD");'></div>
+<div>
+<p class="text-black dark:text-white text-lg font-bold leading-normal">BMW M4 Competition</p>
+<p class="text-gray-600 dark:text-[#92a4c9] text-base font-normal leading-normal">$79,900</p>
+<p class="text-green-500 text-sm font-medium leading-normal mt-1">In Stock</p>
+</div>
+<div class="flex flex-1 gap-3 flex-wrap justify-between items-end">
+<button class="flex flex-1 min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-[#232f48] text-black dark:text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-gray-300 dark:hover:bg-[#344466]">
+<span class="truncate">View Details</span>
+</button>
+<button class="flex flex-1 min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors hover:bg-blue-700">
+<span class="material-symbols-outlined">view_in_ar</span>
+<span class="truncate">View in AR</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

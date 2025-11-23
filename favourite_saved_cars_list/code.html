@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Garage - Favorite Cars</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2b6cee",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center p-4">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<button class="flex h-10 w-10 items-center justify-center rounded-full text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+</div>
+<h1 class="flex-1 text-center text-lg font-bold leading-tight tracking-[-0.015em] text-slate-900 dark:text-white">My Garage</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-2xl">tune</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow px-4 pb-4">
+<div class="flex flex-col gap-4">
+<!-- Car Card 1 -->
+<div class="relative overflow-hidden rounded-xl border border-slate-200/50 dark:border-slate-800/50 bg-white/50 p-4 shadow-sm backdrop-blur-lg dark:bg-slate-900/50">
+<div class="flex flex-col gap-4">
+<div class="relative">
+<img class="aspect-[16/9] w-full rounded-lg object-cover" data-alt="A white Porsche 911 GT3 RS on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1nMh6pt3QVByQKyDsJEjJDlR8NWNaiIz0WSRQoULXeqiGIVEZKpzV3a9X-GBErbzF_l6CGnCE0gj62YHX4VjOMy0qfQksjTr30GPaam_qQOV8IW3Kw_XBaI0sUVBzvWoZC61KMxcUc6mnhMD2Ts1xv7UV6Eq1pPfMJXKopT769lg37ywslV-7sadzuDsfQ1ZuV097xpud3WmyvrJcBpQSWiJryjbqj4oadkfO4pJVQaVUq89lnAQyTABpPc6NQa611ghKVJg_VPDV"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<p class="text-lg font-bold leading-tight text-slate-900 dark:text-white">Porsche 911 GT3 RS</p>
+<button class="text-primary">
+<span class="material-symbols-outlined !fill-primary">favorite</span>
+</button>
+</div>
+<p class="text-sm font-normal leading-normal text-slate-600 dark:text-slate-400">$241,300</p>
+<p class="text-sm font-normal leading-normal text-slate-500 dark:text-slate-500">518 HP | 4.0L Flat-6 | 3.2s 0-60</p>
+</div>
+<button class="flex h-10 w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-white">
+<span class="material-symbols-outlined text-base">view_in_ar</span>
+<span class="truncate">View in AR</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Car Card 2 -->
+<div class="relative overflow-hidden rounded-xl border border-slate-200/50 dark:border-slate-800/50 bg-white/50 p-4 shadow-sm backdrop-blur-lg dark:bg-slate-900/50">
+<div class="flex flex-col gap-4">
+<div class="relative">
+<img class="aspect-[16/9] w-full rounded-lg object-cover" data-alt="A silver Audi R8 Coupe V10 on a city street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPL4il_9zesx8RzOF9X-6XrfO7p2X3HLSYZ-VuzWXvDKZJrNjMVeH5RnMSVXB2sO0Fx5CdGFeqPE8vR3KxTT8rcdouDPDko0NHF6PfN_ILCyIg588CnKZpNCkR8nsOP9mYjVflgl2wo8dM5c2zWoXf8HwiRzxk2hLG5QajleRgbF5qFF1Sc4svdbLiULTKSv2NgxLjvQx7P9w_rt_Y4URzlOY7ps5szDQturjWZ3kD-eraan07NyIx2bT24qEANYSWxSYx6inxZwzn"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<p class="text-lg font-bold leading-tight text-slate-900 dark:text-white">Audi R8 Coupe V10</p>
+<button class="text-primary">
+<span class="material-symbols-outlined !fill-primary">favorite</span>
+</button>
+</div>
+<p class="text-sm font-normal leading-normal text-slate-600 dark:text-slate-400">$211,995</p>
+<p class="text-sm font-normal leading-normal text-slate-500 dark:text-slate-500">602 HP | 5.2L V10 | 3.1s 0-60</p>
+</div>
+<button class="flex h-10 w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-white">
+<span class="material-symbols-outlined text-base">view_in_ar</span>
+<span class="truncate">View in AR</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Car Card 3 -->
+<div class="relative overflow-hidden rounded-xl border border-slate-200/50 dark:border-slate-800/50 bg-white/50 p-4 shadow-sm backdrop-blur-lg dark:bg-slate-900/50">
+<div class="flex flex-col gap-4">
+<div class="relative">
+<img class="aspect-[16/9] w-full rounded-lg object-cover" data-alt="An orange McLaren Artura on a race track" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE3QFHc0n5K06OkO_e298U9aRygVkPfwqryD0erZ_QnFubuV2PK8Wprp73YopHNzNAgjxjcxojcaq3OK6aUFfeLBOFhje13u0onjQBbyMBU_uHEtzGDsFFONZ6bv16IwTrPsHxXKS14r5iTobC_A8XH13RPUTVrQhF8aAz9l8ToQ4i0-wjkwtmzGRGK67-hZKNZLspCipOozYRimhmxFzgFeSVL9VHaWJxigZOJjM_1x8iYDg2uNh9G7x_hfatqpvJ04dDa48b3FYX"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<p class="text-lg font-bold leading-tight text-slate-900 dark:text-white">McLaren Artura</p>
+<button class="text-primary">
+<span class="material-symbols-outlined !fill-primary">favorite</span>
+</button>
+</div>
+<p class="text-sm font-normal leading-normal text-slate-600 dark:text-slate-400">$237,500</p>
+<p class="text-sm font-normal leading-normal text-slate-500 dark:text-slate-500">671 HP | 3.0L V6 Hybrid | 3.0s 0-60</p>
+</div>
+<button class="flex h-10 w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-white">
+<span class="material-symbols-outlined text-base">view_in_ar</span>
+<span class="truncate">View in AR</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Empty State Example (can be uncommented if list is empty) -->
+<!-- 
+                <div class="flex flex-col px-4 py-12">
+                    <div class="flex flex-col items-center gap-6 text-center">
+                        <div class="flex items-center justify-center text-slate-400 dark:text-slate-600">
+                             <span class="material-symbols-outlined" style="font-size: 80px;">directions_car</span>
+                        </div>
+                        <div class="flex max-w-xs flex-col items-center gap-2">
+                            <p class="text-lg font-bold leading-tight tracking-[-0.015em] text-slate-900 dark:text-white">Your garage is empty</p>
+                            <p class="text-sm font-normal leading-normal text-slate-600 dark:text-slate-400">Your favorite cars will appear here. Start exploring to find cars you love.</p>
+                        </div>
+                        <button class="flex h-10 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-white">
+                            <span class="truncate">Start Exploring</span>
+                        </button>
+                    </div>
+                </div>
+                -->
+</div>
+</main>
+</div>
+</body></html>
